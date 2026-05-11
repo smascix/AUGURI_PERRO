@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auguri Perrone</title>
+   <style>
+    /* SFONDO TOTALE */
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #374151 !important; /* Grigio scuro */
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        min-height: 100vh; 
+        margin: 0; 
+    }
+
+    /* CONTENITORE BIANCO */
+    .game-container { 
+        text-align: center; 
+        background-color: #ffffff !important; 
+        padding: 30px; 
+        border-radius: 25px; 
+        box-shadow: 0 20px 50px rgba(0,0,0,0.4); 
+        max-width: 600px; 
+        width: 90%; 
+    }
+
+    /* TITOLI E SCRITTE */
+    h1, .top-caption, .option p, h2 { 
+        color: #8b0000 !important; /* Rosso scuro visibile */
+        margin-bottom: 20px;
+    }
+
+    /* CASELLE DELLE FOTO */
+    .options { display: flex; gap: 15px; justify-content: center; }
+    
+    .option { 
+        cursor: pointer; 
+        flex: 1; 
+        background-color: #ffffff !important; /* Forza il bianco */
+        padding: 10px; 
+        border-radius: 15px; 
+        border: 2px solid #eeeeee !important; 
+        transition: 0.3s;
+    }
+
+    .option:hover { 
+        transform: translateY(-5px); 
+        border-color: #8b0000 !important; 
+    }
+
+    .option img { 
+        width: 100%; 
+        height: 160px; 
+        object-fit: cover; 
+        border-radius: 12px; 
+    }
+
+    /* BOTTONE INIZIALE */
+    .btn { 
+        background-color: #8b0000 !important; 
+        color: #ffffff !important; 
+        border: none; 
+        padding: 15px 40px; 
+        border-radius: 50px; 
+        cursor: pointer; 
+        font-size: 1.1rem; 
+        font-weight: bold; 
+    }
+
+    /* FINTO LINK FINALE */
+    .fake-link { 
+        color: #b91c1c !important; 
+        text-decoration: underline; 
+        cursor: pointer; 
+        display: block; 
+        margin-top: 20px; 
+        font-weight: bold; 
+    }
+
+    .hidden { display: none; }
+    .img-main { width: 100%; border-radius: 20px; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<div class="game-container">
+    
+    <!-- SCHERMATA 0: BENVENUTO -->
+    <div id="step0">
+        <!-- MODIFICA LA DIDASCALIA SOPRA -->
+        <p class="top-caption">Ciao Perrone, vogliamo fare un gioco con te...</p>
+        <!-- NOME FOTO INIZIALE -->
+        <img src="inizio.jpg" class="img-main" alt="Inizio">
+        <button class="btn" onclick="nextStep(1)">INIZIA IL GIOCO</button>
+    </div>
+
+    <!-- DOMANDA 1 -->
+    <div id="step1" class="hidden">
+        <h1>1. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(2)"><img src="1a.jpg"><p>PILLOLA ROSSA: regalo bello ma fatto con il culo</p></div>
+            <div class="option" onclick="nextStep(2)"><img src="1b.jpg"><p>PILLOLA BLU: regalo di merda ma fatto con il cuore</p></div>
+        </div>
+    </div>
+
+    <!-- DOMANDA 2 -->
+    <div id="step2" class="hidden">
+        <h1>2. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(3)"><img src="2a.jpg"><p>Cappello Cowboy</p></div>
+            <div class="option" onclick="nextStep(3)"><img src="2b.jpg"><p>Cappello regalato da noi</p></div>
+        </div>
+    </div>
+
+    <!-- DOMANDA 3 -->
+    <div id="step3" class="hidden">
+        <h1>3. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(4)"><img src="3a.jpg"><p>Jessica Stambassi</p></div>
+            <div class="option" onclick="nextStep(4)"><img src="3b.jpg"><p>Jessico Calcetto</p></div>
+        </div>
+    </div>
+
+    <!-- DOMANDA 4 -->
+    <div id="step4" class="hidden">
+        <h1>4. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(5)"><img src="4a.jpg"><p>Due di Picche</p></div>
+            <div class="option" onclick="nextStep(5)"><img src="4b.jpg"><p>Due di Coppe</p></div>
+        </div>
+    </div>
+
+    <!-- DOMANDA 5 -->
+    <div id="step5" class="hidden">
+        <h1>5. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(6)"><img src="5a.jpg"><p>Ostia Lido</p></div>
+            <div class="option" onclick="nextStep(6)"><img src="5b.jpg"><p>Punta Prosciutto</p></div>
+        </div>
+    </div>
+
+    <!-- DOMANDA 6 -->
+    <div id="step6" class="hidden">
+        <h1>6. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(7)"><img src="6a.jpg"><p>Rolex che non puoi permetterti</p></div>
+            <div class="option" onclick="nextStep(7)"><img src="6b.jpg"><p>Orologio bello regalato da noi</p></div>
+        </div>
+    </div>
+
+    <!-- DOMANDA 7 -->
+    <div id="step7" class="hidden">
+        <h1>7. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(8)"><img src="7a.jpg"><p>Santa Maria</p></div>
+            <div class="option" onclick="nextStep(8)"><img src="7b.jpg"><p>Oh Maria!</p></div>
+        </div>
+    </div>
+
+    <!-- DOMANDA 8 -->
+    <div id="step8" class="hidden">
+        <h1>8. FAI LA TUA SCELTA</h1>
+        <div class="options">
+            <div class="option" onclick="nextStep(9)"><img src="8a.jpg"><p>30</p></div>
+            <div class="option" onclick="nextStep(9)"><img src="8b.jpg"><p>31</p></div>
+        </div>
+    </div>
+
+    <!-- SCHERMATA FINALE -->
+    <div id="step9" class="hidden">
+        <h2 style="color:#2563eb">TANTI AUGURI! 🎉</h2>
+        <img src="regalo.jpg" class="img-main" alt="Il Regalo">
+        <!-- FRASE SOTTO LA FOTO DEL REGALO -->
+        <p></p>
+        <!-- TESTO DEL FINTO LINK -->
+        <span class="fake-link" onclick="nextStep(10)">Clicca qui per scaricare i biglietti</span>
+    </div>
+
+    <!-- SCHERMATA BONUS (IL FINTO LINK) -->
+    <div id="step10" class="hidden">
+        <h2 style="color:#2563eb">😘</h2>
+        <img src="bonus.jpg" class="img-main" alt="Bonus">
+        <!-- FRASE FINALE SOTTO L'ULTIMA FOTO -->
+        <p>Auguri Perro! Da: Mari, Mapi, Jess, Stefano, Leonardo, Vincenzo, Aurora, Sara, Lorenzo ❤️</p>
+    </div>
+
+</div>
+
+<script>
+    function nextStep(step) {
+        // Nascondi tutti i blocchi
+        document.querySelectorAll('.game-container > div').forEach(div => {
+            div.classList.add('hidden');
+        });
+        // Mostra quello selezionato
+        document.getElementById('step' + step).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
